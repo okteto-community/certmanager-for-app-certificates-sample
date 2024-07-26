@@ -5,7 +5,7 @@ build:
     dockerfile: Dockerfile
 
 deploy:
-  - helm upgrade --install goapp chart --set image=${OKTETO_BUILD_GOAPP_IMAGE} 
+  - helm upgrade --install goapp chart --set image=${OKTETO_BUILD_GOAPP_IMAGE}  --set domain=hello-world-${OKTETO_NAMESPACE}.${OKTETO_DOMAIN}
 
 dev:
   hello-world:

@@ -31,16 +31,9 @@ An example is shown in the folder `certmanager`
 
 And finally you should parametrize the name of the host with the name of the Namespace where it is being deployed. 
 
-There is an example in the folder `app-config`.
+There is an example in the folder `app-config` with the TLS section. 
 
-To do so, add to your Helm values configuration the option of the Namespace and use the Environment variable that Okteto provides: OKTETO_NAMESPACE
-
-In this case you have to remove the annotation to auto generate host from Okteto
-
-```yaml
-annotations:
-    dev.okteto.com/generate-host: hello-world
-```
+To do so, add to your Helm values configuration the option of the dmoain and use the Environment variable that Okteto provides: `OKTETO_NAMESPACE`
 
 To be able to add the TLS section to the ingress. You need to specify here to Cert Manager the name it will create for that domain. 
 
@@ -51,3 +44,11 @@ To be able to add the TLS section to the ingress. You need to specify here to Ce
       - mydomain.dev.okteto.net
 ```
 
+### Note
+
+It is important to remove any automatic annotation: 
+
+```yaml
+  annotations:
+    dev.okteto.com/generate-host: hello-world
+```
