@@ -1,5 +1,11 @@
+
+build: 
+  goapp: 
+    context: .
+    dockerfile: Dockerfile
+
 deploy:
-  - kubectl apply -f k8s.yml
+  - helm upgrade --install goapp chart --set image=${OKTETO_BUILD_GOAPP_IMAGE} 
 
 dev:
   hello-world:
