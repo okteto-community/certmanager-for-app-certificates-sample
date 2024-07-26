@@ -1,0 +1,4 @@
+namespace:
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: "myissuer"
