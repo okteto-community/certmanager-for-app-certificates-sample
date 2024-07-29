@@ -1,4 +1,4 @@
-# go-getting-started-certificate
+# certmanager-for-app-certificates-sample
 This is an example of how to add Ingress Objects with TLS and CertManager creating certificate for the host
 
 
